@@ -7,29 +7,40 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".activity_add_note">
+    android:background="#99CCE3">
 
     <EditText
-        android:id="@+id/edit_text_title"
+        android:id="@+id/edit_text_nama"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Judul"
+        android:hint="Nama"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_text_description"
+        android:id="@+id/edit_text_status"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Deskripsi"
+        android:hint="Status"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_title" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_nama" />
+
+    <EditText
+        android:id="@+id/edit_text_alamat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Alamat"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_status" />
 
     <TextView
         android:id="@+id/textView"
@@ -48,6 +59,6 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_description" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_alamat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

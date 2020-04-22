@@ -69,8 +69,9 @@ class MainActivity : AppCompatActivity() {
             override fun onItemClick(note: Note) {
                 val intent = Intent(baseContext, AddEditNoteActivity::class.java)
                 intent.putExtra(AddEditNoteActivity.EXTRA_ID, note.id)
-                intent.putExtra(AddEditNoteActivity.EXTRA_JUDUL, note.title)
-                intent.putExtra(AddEditNoteActivity.EXTRA_DESKRIPSI, note.description)
+                intent.putExtra(AddEditNoteActivity.EXTRA_NAMA, note.nama)
+                intent.putExtra(AddEditNoteActivity.EXTRA_STATUS, note.status)
+                intent.putExtra(AddEditNoteActivity.EXTRA_ALAMAT, note.alamat)
                 intent.putExtra(AddEditNoteActivity.EXTRA_PRIORITAS, note.priority)
 
                 startActivityForResult(intent, EDIT_NOTE_REQUEST)
@@ -101,8 +102,9 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == ADD_NOTE_REQUEST && resultCode == Activity.RESULT_OK) {
             val newNote = Note(
-                data!!.getStringExtra(AddEditNoteActivity.EXTRA_JUDUL),
-                data.getStringExtra(AddEditNoteActivity.EXTRA_DESKRIPSI),
+                data!!.getStringExtra(AddEditNoteActivity.EXTRA_NAMA),
+                data.getStringExtra(AddEditNoteActivity.EXTRA_STATUS),
+                data.getStringExtra(AddEditNoteActivity.EXTRA_ALAMAT),
                 data.getIntExtra(AddEditNoteActivity.EXTRA_PRIORITAS, 1)
             )
             noteViewModel.insert(newNote)
@@ -115,8 +117,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             val updateNote = Note(
-                data!!.getStringExtra(AddEditNoteActivity.EXTRA_JUDUL),
-                data.getStringExtra(AddEditNoteActivity.EXTRA_DESKRIPSI),
+                data!!.getStringExtra(AddEditNoteActivity.EXTRA_NAMA),
+                data.getStringExtra(AddEditNoteActivity.EXTRA_STATUS),
+                data.getStringExtra(AddEditNoteActivity.EXTRA_ALAMAT),
                 data.getIntExtra(AddEditNoteActivity.EXTRA_PRIORITAS, 1)
             )
             updateNote.id = data.getIntExtra(AddEditNoteActivity.EXTRA_ID, -1)
